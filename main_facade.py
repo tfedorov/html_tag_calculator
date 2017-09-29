@@ -5,7 +5,11 @@ import tags_calculator as tags
 import url_synonyms_resolver as syn
 
 
-def get(url_or_synonym):
+def synonym_keys():
+    return [*syn.read_synonyms()]
+
+
+def get_command(url_or_synonym):
     valid_url = syn.resolve(url_or_synonym)
 
     page_content = pr.read_content(valid_url)
@@ -27,6 +31,3 @@ def init():
 
 
 init()
-get("http://google.com")
-get("ggl")
-print(view("http://google.com"))
