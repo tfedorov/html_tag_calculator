@@ -1,15 +1,18 @@
 from logic import *
+from logic import  read_synonyms, PersistenceStorage
+
 
 class MainFacade:
     def __init__(self):
-        self._storage = persistent_storage.PersistenceStorage()
+        self._storage = PersistenceStorage()
+        self.synonyms = read_synonyms()
 
     def synonym_keys(self):
-        return [*url_resolver.read_synonyms()]
+        return [*self.synonyms]
 
     def get_command(self, url_or_synonym):
         try:
-            valid_url = url_resolver.resolve(url_or_synonym)
+            valid_url = self.synonyms.get(url_or_synonym)
             page_content = page_reader.read_content(valid_url)
             custom_logger.log(valid_url)
             tags_num = tags_calculator.calculate(page_content)
