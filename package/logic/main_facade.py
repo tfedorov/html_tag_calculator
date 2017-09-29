@@ -1,23 +1,18 @@
-import logic.custom_logger as cust_log
-import logic.page_reader as pr
-import logic.persistent_storage as storage
-import logic.tags_calculator as tags
-import logic.url_resolver as syn
-
+from logic import *
 
 class MainFacade:
     def __init__(self):
-        self._storage = storage.PersistenceStorage()
+        self._storage = persistent_storage.PersistenceStorage()
 
     def synonym_keys(self):
-        return [*syn.read_synonyms()]
+        return [*url_resolver.read_synonyms()]
 
     def get_command(self, url_or_synonym):
         try:
-            valid_url = syn.resolve(url_or_synonym)
-            page_content = pr.read_content(valid_url)
-            cust_log.log(valid_url)
-            tags_num = tags.calculate(page_content)
+            valid_url = url_resolver.resolve(url_or_synonym)
+            page_content = page_reader.read_content(valid_url)
+            custom_logger.log(valid_url)
+            tags_num = tags_calculator.calculate(page_content)
             self._storage.save(valid_url, tags_num)
             return tags_num
         except Exception as e:
@@ -27,7 +22,7 @@ class MainFacade:
 
     def view_command(self, url_or_synonym):
         try:
-            valid_url = syn.resolve(url_or_synonym)
+            valid_url = url_resolver.resolve(url_or_synonym)
             return self._storage.load(valid_url)
         except Exception as e:
             msg = "Url error: " + str(e)
