@@ -1,9 +1,9 @@
 import sys
 
 import gui_app
-import main_facade
+import logic.main_facade as main
 
-main = main_facade.MainFacade()
+main = main.MainFacade()
 
 if (len(sys.argv) < 3):
     gui_app.launch(main)

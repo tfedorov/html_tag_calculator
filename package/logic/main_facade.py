@@ -1,8 +1,8 @@
-import custom_logger as cust_log
-import page_reader as pr
-import persistent_storage as storage
-import tags_calculator as tags
-import url_resolver as syn
+import logic.custom_logger as cust_log
+import logic.page_reader as pr
+import logic.persistent_storage as storage
+import logic.tags_calculator as tags
+import logic.url_resolver as syn
 
 
 class MainFacade:
