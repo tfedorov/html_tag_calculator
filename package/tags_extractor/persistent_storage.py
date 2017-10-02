@@ -4,6 +4,8 @@ import time
 
 
 class PersistenceStorage:
+    """SqlLite work in memory """
+
     def __init__(self):
         self._conn = sqlite3.connect(':memory:')
         self._cursor = self._conn.cursor()
@@ -11,12 +13,14 @@ class PersistenceStorage:
         self._conn.commit()
 
     def save(self, url, tags):
+        """Insert into SqlLite: Serialize by pickle """
 
         serialized = pickle.dumps(tags)
         self._cursor.execute("INSERT INTO tags VALUES (?, ?, ?)", [time.strftime("%c"), url, serialized])
         self._conn.commit()
 
     def load(self, url):
+        """Load from SqlLite: DeSerialize by pickle """
         self._cursor.execute('SELECT * FROM tags WHERE url=?', [url])
         raw_results = self._cursor.fetchall()
         return [PersistenceStorage._raw_writer(r) for r in raw_results]

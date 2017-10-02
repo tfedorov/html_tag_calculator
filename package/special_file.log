@@ -16,3 +16,4 @@ ERROR:root:Mon Oct  2 12:42:37 2017 <urlopen error no host given>
 ERROR:root:Mon Oct  2 12:42:39 2017 <urlopen error no host given>
 ERROR:root:Mon Oct  2 12:43:06 2017 <urlopen error no host given>
 ERROR:root:Mon Oct  2 12:43:27 2017 <urlopen error no host given>
+ERROR:root:Mon Oct  2 13:43:58 2017Url error: 'list' object has no attribute 'items'

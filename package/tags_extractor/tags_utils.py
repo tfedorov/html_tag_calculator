@@ -5,6 +5,7 @@ _pattern = re.compile(
 
 
 def calculate(content):
+    """Regex tags extractor"""
     result = {}
     matches = _pattern.finditer(content)
     for m in matches:
@@ -15,4 +16,5 @@ def calculate(content):
 
 
 def print_pr(target_tags):
+    """Pretty print for result"""
     return '\n'.join("{!s}={!r}".format(key, val) for (key, val) in target_tags.items())
