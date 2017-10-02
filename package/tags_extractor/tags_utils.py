@@ -12,3 +12,7 @@ def calculate(content):
         current_tag_num = result.get(tag, 0);
         result[tag] = current_tag_num + 1
     return result
+
+
+def print_pr(target_tags):
+    return '\n'.join("{!s}={!r}".format(key, val) for (key, val) in target_tags.items())

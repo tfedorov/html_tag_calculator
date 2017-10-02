@@ -3,3 +3,16 @@ DEBUG:root:Fri Sep 29 22:52:30 2017 http://google.com
 ERROR:root:Sat Sep 30 09:43:44 2017http://google.com name 'calculate' is not defined
 ERROR:root:Sat Sep 30 09:44:25 2017http://google.com name 'pr' is not defined
 ERROR:root:Sat Sep 30 10:06:02 2017http://google.com local variable '_normalize_url' referenced before assignment
+ERROR:root:Mon Oct  2 12:29:36 2017None 'NoneType' object has no attribute 'startswith'
+ERROR:root:Mon Oct  2 12:29:45 2017None 'NoneType' object has no attribute 'startswith'
+ERROR:root:Mon Oct  2 12:30:35 2017None 'NoneType' object has no attribute 'startswith'
+ERROR:root:Mon Oct  2 12:31:51 2017None 'NoneType' object has no attribute 'startswith'
+ERROR:root:Mon Oct  2 12:32:59 2017None 'NoneType' object has no attribute 'startswith'
+ERROR:root:Mon Oct  2 12:34:12 2017None 'NoneType' object has no attribute 'startswith'
+ERROR:root:Mon Oct  2 12:34:25 2017None 'NoneType' object has no attribute 'startswith'
+ERROR:root:Mon Oct  2 12:42:29 2017 <urlopen error no host given>
+ERROR:root:Mon Oct  2 12:42:34 2017 <urlopen error no host given>
+ERROR:root:Mon Oct  2 12:42:37 2017 <urlopen error no host given>
+ERROR:root:Mon Oct  2 12:42:39 2017 <urlopen error no host given>
+ERROR:root:Mon Oct  2 12:43:06 2017 <urlopen error no host given>
+ERROR:root:Mon Oct  2 12:43:27 2017 <urlopen error no host given>
