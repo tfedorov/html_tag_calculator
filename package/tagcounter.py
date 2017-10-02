@@ -1,7 +1,7 @@
 import sys
 
 import gui_app
-import logic.main_facade as main
+import tags_extractor.main_facade as main
 
 main = main.MainFacade()
 

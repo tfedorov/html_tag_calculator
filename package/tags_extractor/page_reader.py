@@ -7,6 +7,7 @@ def read_content(target_url):
     content_bytes = opener.read()
     return str(content_bytes)
 
+
 def _normalize_url(target_url):
     if target_url.startswith("http://") or target_url.startswith("https://"):
         return target_url

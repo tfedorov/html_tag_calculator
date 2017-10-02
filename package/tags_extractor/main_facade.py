@@ -1,7 +1,7 @@
 import logging
 import time
 
-from logic import synonyms_reader as syn, PersistenceStorage, tags_utils as tags, page_reader as pr
+from tags_extractor import synonyms_reader as syn, PersistenceStorage, tags_utils as tags, page_reader as pr
 
 
 class MainFacade:
